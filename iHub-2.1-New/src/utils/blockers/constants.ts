@@ -1,0 +1,52 @@
+export const adSelectors = [
+  // Ad selectors remain the same...
+  'iframe[src*="doubleclick.net"]',
+  'iframe[src*="google-analytics.com"]',
+  'iframe[src*="googleadservices.com"]',
+  'div[class*="ad-"]',
+  'div[class*="ads-"]',
+  'div[id*="ad-"]',
+  'div[id*="ads-"]',
+  'ins.adsbygoogle',
+  'div[class*="app-install"]',
+  'div[class*="app-banner"]',
+  'div[class*="smart-banner"]',
+  'div[class*="mobile-banner"]',
+  'div[class*="mobile-ad"]',
+  'div[class*="player-ads"]',
+  'div[class*="video-ad"]',
+  '.overlay-ad',
+  '#player-advertising',
+  '[class*="overlay"]',
+  '[class*="popup"]',
+  '[id*="overlay"]',
+  '[id*="popup"]',
+  '[class*="mobile-overlay"]',
+  '[class*="mobile-popup"]',
+  '[class*="app-download"]'
+];
+
+// Expanded list of trusted domains to include all video player domains
+export const trustedDomains = [
+  'api.themoviedb.org',
+  'image.tmdb.org',
+  'vidsrc.me',
+  'vidsrc.to',
+  'vidsrc.xyz',
+  'vidsrc.stream',
+  'vidplay.site',
+  'vidplay.online',
+  'vidplay.stream',
+  'vidplay.lol',
+  'streamtape.com',
+  'streamtape.xyz',
+  'streamtape.site',
+  'rabbitstream.net',
+  'filemoon.sx',
+  'streamhub.to',
+  'dokicloud.one',
+  'api.consumet.org',
+  'embed.smashystream.com',
+  'embedsito.com',
+  'multiembed.mov'
+];

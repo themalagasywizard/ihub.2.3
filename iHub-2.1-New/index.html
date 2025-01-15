@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:url" content="https://oz-hub.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="iHUB">
+    <meta property="og:description" content="Watch iHUB movies & TV shows online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more. For free!">
+    <meta property="og:image" content="/lovable-uploads/279b9304-fed6-4bfe-9cb8-3906fe8f74d1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iHUB</title>
+    <link rel="icon" href="/lovable-uploads/279b9304-fed6-4bfe-9cb8-3906fe8f74d1.png">
+    <style>
+        #root {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            height: 6em;
+            padding: 1.5em;
+            will-change: filter;
+            transition: filter 300ms;
+        }
+        .logo:hover {
+            filter: drop-shadow(0 0 2em #646cffaa);
+        }
+        .logo.react:hover {
+            filter: drop-shadow(0 0 2em #61dafbaa);
+        }
+
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            a:nth-of-type(2) .logo {
+                animation: logo-spin infinite 20s linear;
+            }
+        }
+
+        .card {
+            padding: 2em;
+        }
+
+        .read-the-docs {
+            color: #888;
+        }
+
+        /* Enhanced animations and effects */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .result-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(234, 56, 76, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(234, 56, 76, 0.4);
+        }
+
+        .category-title {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-left: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+        // Enhanced translations
+        const translations = {
+            en: {
+                home: 'Home',
+                search: 'Search movies and TV shows...',
+                action: 'Action',
+                adventure: 'Adventure',
+                animation: 'Animation',
+                comedy: 'Comedy',
+                crime: 'Crime',
+                documentary: 'Documentary',
+                drama: 'Drama',
+                family: 'Family',
+                fantasy: 'Fantasy',
+                history: 'History',
+                horror: 'Horror',
+                music: 'Music',
+                mystery: 'Mystery',
+                romance: 'Romance',
+                scienceFiction: 'Science Fiction',
+                tvMovie: 'TV Movie',
+                thriller: 'Thriller',
+                war: 'War',
+                western: 'Western',
+                noResults: 'No results found',
+                watching: 'people watching worldwide',
+                dyslexicFont: 'Dyslexic Font'
+            },
+            es: {
+                home: 'Inicio',
+                search: 'Buscar películas y series...',
+                action: 'Acción',
+                adventure: 'Aventura',
+                animation: 'Animación',
+                comedy: 'Comedia',
+                crime: 'Crimen',
+                documentary: 'Documental',
+                drama: 'Drama',
+                family: 'Familia',
+                fantasy: 'Fantasía',
+                history: 'Historia',
+                horror: 'Horror',
+                music: 'Música',
+                mystery: 'Misterio',
+                romance: 'Romance',
+                scienceFiction: 'Ciencia Ficción',
+                tvMovie: 'Película de TV',
+                thriller: 'Suspenso',
+                war: 'Guerra',
+                western: 'Western',
+                noResults: 'No se encontraron resultados',
+                watching: 'personas viendo en todo el mundo',
+                dyslexicFont: 'Fuente Disléxica'
+            },
+            ru: {
+                home: 'Домой',
+                search: 'Поиск фильмов и телешоу...',
+                action: 'Экшн',
+                adventure: 'Приключения',
+                animation: 'Анимация',
+                comedy: 'Комедия',
+                crime: 'Преступление',
+                documentary: 'Документальный',
+                drama: 'Драма',
+                family: 'Семейный',
+                fantasy: 'Фэнтези',
+                history: 'История',
+                horror: 'Ужасы',
+                music: 'Музыка',
+                mystery: 'Мистика',
+                romance: 'Романтика',
+                scienceFiction: 'Научная фантастика',
+                tvMovie: 'Телевизионный фильм',
+                thriller: 'Триллер',
+                war: 'Война',
+                western: 'Вестерн',
+                noResults: 'Результатов не найдено',
+                watching: 'людей смотрят по всему миру',
+                dyslexicFont: 'Дислексическая шрифт'
+            },
+            sl: {
+                home: 'Domov',
+                search: 'Išči filme in TV oddaje...',
+                action: 'Akcija',
+                adventure: 'Pustolovščina',
+                animation: 'Animacija',
+                comedy: 'Komedija',
+                crime: 'Kriminal',
+                documentary: 'Dokumentarni',
+                drama: 'Drama',
+                family: 'Družinski',
+                fantasy: 'Fantazija',
+                history: 'Zgodovina',
+                horror: 'Groza',
+                music: 'Glasba',
+                mystery: 'Misterij',
+                romance: 'Romanca',
+                scienceFiction: 'Znanstvena fantastika',
+                tvMovie: 'TV film',
+                thriller: 'Triler',
+                war: 'Vojna',
+                western: 'Vestern',
+                noResults: 'Ni bilo najdenih rezultatov',
+                watching: 'ljudi gledajo po vsem svetu',
+                dyslexicFont: 'Disleksijski font'
+            },
+            tr: {
+                home: 'Ana Sayfa',
+                search: 'Film ve TV şovlarını ara...',
+                action: 'Aksiyon',
+                adventure: 'Macera',
+                animation: 'Animasyon',
+                comedy: 'Komedi',
+                crime: 'Suç',
+                documentary: 'Belgesel',
+                drama: 'Dram',
+                family: 'Aile',
+                fantasy: 'Fantastik',
+                history: 'Tarih',
+                horror: 'Korku',
+                music: 'Müzik',
+                mystery: 'Gizem',
+                romance: 'Romantik',
+                scienceFiction: 'Bilim Kurgu',
+                tvMovie: 'TV Filmi',
+                thriller: 'Gerilim',
+                war: 'Savaş',
+                western: 'Vahşi Batı',
+                noResults: 'Sonuç bulunamadı',
+                watching: 'dünyada izleyen insanlar',
+                dyslexicFont: 'Disleksik Yazı Tipi'
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang]?.[key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update search placeholder
+            searchInput.placeholder = translations[lang].search;
+
+            // Update category titles
+            Object.entries(categories).forEach(([id, name]) => {
+                const categoryTitle = document.querySelector(`#category-${id} .category-title`);
+                if (categoryTitle) {
+                    categoryTitle.textContent = translations[lang][name.toLowerCase()] || name;
+                }
+            });
+        }
+
+        function toggleDyslexicFont() {
+            document.body.classList.toggle('dyslexic');
+            localStorage.setItem('dyslexicFont', document.body.classList.contains('dyslexic'));
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Restore dyslexic font preference
+            const dyslexicFont = localStorage.getItem('dyslexicFont') === 'true';
+            if (dyslexicFont) {
+                document.body.classList.add('dyslexic');
+            }
+
+            // Start on home tab
+            showAllCategories();
+            
+            // Block ads
+            blockAds();
+
+            // Add translation attributes
+            document.querySelectorAll('nav a').forEach(link => {
+                const text = link.textContent.toLowerCase();
+                link.setAttribute('data-translate', text);
+            });
+
+            // Initialize content blockers
+            import('/src/utils/contentBlocker.ts').then(module => {
+                module.initializeBlockers();
+            }).catch(error => {
+                console.error('Error initializing content blockers:', error);
+            });
+        });
+    </script>
+</body>
+</html>
